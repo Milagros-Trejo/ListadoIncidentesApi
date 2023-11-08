@@ -18,4 +18,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Routes::resource('incidentes', 'IncidentesController');
+Route::resource('incidentes', 'IncidentesController');

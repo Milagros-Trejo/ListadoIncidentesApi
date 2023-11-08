@@ -18,9 +18,9 @@ class Incidente extends Model
         'horaDeApertura',
         'horaDeCierre',
         'observaciones'
-    ]
+    ];
 
     protected $guarded = [
         
-    ]
+    ];
 }
