@@ -29,12 +29,6 @@ class Incidente extends Model
         
     ];
 
-    // NO VA PORQUE SOLO MOSTRAMOS ACTIVOS
-    //
-    //public function miembroCierre(){
-    //    return $this->belongsTo(Miembro::class);
-    //}
-
     public function prestacionservicio(){
         return $this->belongsTo(PrestacionServicio::class);
     }

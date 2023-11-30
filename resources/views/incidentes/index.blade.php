@@ -1,18 +1,37 @@
 @extends('incidentes.base')
 @section('contenido')
-<h1 style="color: #581ee1">Listado de incidentes activos</h1>
+<h1 style="color: #581ee1">Listado de incidentes</h1>
 <table>
     @foreach($incidentes as $current)
     <div class="list-group">
         <a class="list-group-item m-2">
             <div class="d-flex w-100 justify-content-between">
+                <small style="color: #581ee1"><b>
+                    @if($current->horaDeCierre)
+                        CERRADO
+                    @else
+                        ACTIVO
+                    @endif
+                </b></small>
+                <small>{{$current->comunidad->descripcion}}</small>
+            </div>
+            <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1" style="color: #581ee1">
                     {{$current->prestacionservicio->establecimiento->nombre}} - {{$current->prestacionservicio->servicioprestado->descripcion}}
                 </h5>
-                <small>{{$current->comunidad->descripcion}}</small>
             </div>
             <p class="mb-1">{{$current->observaciones}}</p>
-            <small>Reportante: {{$current->miembro->nicknameMiembro}}</small>
+            <div class="d-flex w-100 justify-content-between">
+                <small>
+                    Reportante: {{$current->miembro->nicknameMiembro}}
+                </small>
+                <small>
+                    Desde {{date('d/m/Y h:m:s', strtotime($current->horaDeApertura))}} 
+                    @isset($current->horaDeCierre)
+                        hasta {{date('d/m/Y h:m:s', strtotime($current->horaDeCierre))}}
+                    @endisset
+                </small>
+            </div>
         </a>
     </div>
     @endforeach

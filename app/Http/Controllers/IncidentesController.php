@@ -19,7 +19,6 @@ class IncidentesController extends Controller
 
     public function index(){
         $incidentes = Incidente::select('*')
-                                ->whereNull('horaDeCierre')
                                 ->get();
 
         return view('incidentes.index')->with('incidentes', $incidentes);

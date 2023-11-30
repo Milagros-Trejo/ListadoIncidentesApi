@@ -24,4 +24,8 @@ class Miembro extends Model
     public function incidentesAbiertos(){
         return $this->hasMany(Incidente::class, 'miembro_id', 'id');
     }
+
+    public function incidentesCerrados(){
+        return $this->hasMany(Incidente::class, 'miembro_cierre_id', 'id');
+    }
 }
