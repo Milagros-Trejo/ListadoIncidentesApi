@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Entidad;
 
 class Establecimiento extends Model
 {
@@ -13,7 +14,8 @@ class Establecimiento extends Model
 
     protected $primaryKey = 'id';
     protected $fillable = [
-        'nombre'
+        'nombre',
+        'entidad_id'
     ];
 
     protected $guarded = [
@@ -22,6 +24,9 @@ class Establecimiento extends Model
     
     public function prestacionesServicio(){
         return $this->hasMany(PrestacionServicio::class, 'establecimiento_id', 'id');
+    }
+    public function entidad(){
+        return $this->belongsTo(Entidad::class);
     }
     
 }

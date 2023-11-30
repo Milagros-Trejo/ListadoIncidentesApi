@@ -17,7 +17,7 @@
             </div>
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1" style="color: #581ee1">
-                    {{$current->prestacionservicio->establecimiento->nombre}} - {{$current->prestacionservicio->servicioprestado->descripcion}}
+                    {{$current->prestacionservicio->establecimiento->entidad->nombre}} {{$current->prestacionservicio->establecimiento->nombre}} - {{$current->prestacionservicio->servicioprestado->descripcion}}
                 </h5>
             </div>
             <p class="mb-1">{{$current->observaciones}}</p>
