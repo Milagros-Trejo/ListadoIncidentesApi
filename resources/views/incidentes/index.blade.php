@@ -1,9 +1,9 @@
 @extends('incidentes.base')
 @section('contenido')
-<h1 style="color: #581ee1">Listado de incidentes</h1>
+<h1 class="mt-3" style="color: #581ee1">Listado de incidentes</h1>
 <table>
-    @foreach($incidentes as $current)
     <div class="list-group">
+    @foreach($incidentes as $current)
         <a class="list-group-item m-2">
             <div class="d-flex w-100 justify-content-between">
                 <small style="color: #581ee1"><b>
@@ -33,7 +33,7 @@
                 </small>
             </div>
         </a>
-    </div>
     @endforeach
+    </div>
 </table>
 @endsection
